@@ -7,7 +7,7 @@ from fastapi import FastAPI, Query, HTTPException
 from fastapi.responses import StreamingResponse
 
 CHUNK_SIZE = 1024 * 64
-MAX_MEMORY_MB = 60
+MAX_MEMORY_MB = 512
 
 app = FastAPI(title="Fast Noise PNG Generator")
 
@@ -101,4 +101,4 @@ async def generate(
 if __name__ == "__main__":
     import uvicorn
 
-    uvicorn.run(app, host="127.0.0.1", port=8001)
+    uvicorn.run(app, host="0.0.0.0", port=8001)
